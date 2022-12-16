@@ -1,0 +1,36 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.dropdown-item{
+    color: white;
+}
+.dropdown-item:hover{
+    background-color: var(--bg-color-blue);
+}
+.dropdown-menu{
+    background-color: var(--bg-color-green);
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.navbar{
+    background-color: var(--bg-color-green);
+}
+.nav-link{
+    color: white;
+}
+
+.img{
+    width:100px;
+    padding:left;
+}
+#btn-item{
+    background-color: var(--bg-color-green);
+    outline: none;
+    border-style: none;
+    color: white;
+}
