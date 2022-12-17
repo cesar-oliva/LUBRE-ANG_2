@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponentComponent } from './home-component/home-component.component';
-import { EmployeeComponentComponent } from './employee-component/employee-component.component';
+import { HomeComponentComponent } from './components/home-component/home-component.component';
+import { EmployeeComponentComponent } from './components/employee-component/employee-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeService } from './services/employee.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponentComponent },
@@ -23,9 +25,14 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    DataTablesModule,
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [
+    EmployeeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
