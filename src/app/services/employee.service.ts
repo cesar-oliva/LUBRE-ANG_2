@@ -1,26 +1,19 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService implements OnInit {
-  dtOptions: DataTables.Settings = {};
-  data: any = [];
+export class EmployeeService{
+  fetchEmployeeDetailsURL = 'http://localhost:5115/api/Employee'
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
+  fetchEmployeeDetails = () => {
+    let header = new HttpHeaders()
+      .set('Type-content','aplication/json')
+    return this.httpClient.get(this.fetchEmployeeDetailsURL,{
+      headers:header
+    });
 
-  ngOnInit(): void {
-    this.dtOptions = {
-      language :{
-        url:"//cdn.datatables.net/plug-ins/1.10.24/i18n/English.json",
-      },
-      pagingType: 'full_numbers',
-      pageLength: 10
-    };
-  }
-  fetchEmployeeDetailsURL = 'http://localhost:5115/api/Gender'
-    fetchEmployeeDetails = () => {
-        return this.httpClient.get(this.fetchEmployeeDetailsURL);
   }
 }

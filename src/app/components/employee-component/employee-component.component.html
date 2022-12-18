@@ -13,14 +13,24 @@
     <table datatable [dtOptions]="dtOptions" class="table table-striped table-hover table-primary">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">description</th>
+            <th scope="col">#File</th>
+            <th scope="col">Cuil Number</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
           </tr>
         </thead>
         <tbody>
-          <tr ngFor="let gender of data">
-            <th>{{gender.id}</th>
-            <td>{{gender.name}</td>
+          <tr *ngFor="let employee of employees">
+            <th>{{employee.fileNumber}}</th>
+            <td>{{employee.cuilNumber}}</td>
+            <td>{{employee.emailAddress}}</td>
+            <th>{{employee.name}}</th>
+            <td>{{employee.lastName}}</td>
+            <th>{{employee.phoneNumber}}</th>
+            <td>{{employee.address}}</td>
           </tr>
         </tbody>
     </table>

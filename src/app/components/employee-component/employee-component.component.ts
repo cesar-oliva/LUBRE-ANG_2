@@ -8,21 +8,24 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class EmployeeComponentComponent implements OnInit {
 
-  gender: any = [];
-
-  constructor(private employeeService: EmployeeService) { }
-
+  public employees: Array<any> = [];
   dtOptions: DataTables.Settings = {};
+
+  constructor(private employeeService: EmployeeService) {
+    this.employeeService.fetchEmployeeDetails().subscribe((resp: any) =>{
+      this.employees = resp
+      console.log(this.employees)
+    });
+   }
 
   ngOnInit(): void {
     this.dtOptions = {
+      language :{
+        url:"//cdn.datatables.net/plug-ins/1.10.24/i18n/English.json",
+      },
       pagingType: 'full_numbers',
       pageLength: 10
     };
-    this.gender = this.employeeService.fetchEmployeeDetails()
-                                      .subscribe((response:any) => {
-                                        this.gender = response.data;
-                                      });
-    console.log(this.gender);
   }
 }
+
