@@ -2,25 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponentComponent } from './components/home-component/home-component.component';
-import { EmployeeComponentComponent } from './components/employee-component/employee-component.component';
+import { HomeComponent } from './components/home/home.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './services/employee.service';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponentComponent },
-  { path: 'employee', component: EmployeeComponentComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'employee', component: EmployeeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: HomeComponentComponent }
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponentComponent,
-    EmployeeComponentComponent
+    HomeComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
