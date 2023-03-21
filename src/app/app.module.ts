@@ -8,10 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './services/employee.service';
+import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'employee', component: EmployeeComponent },
+  { path: 'create-employee', component: CreateEmployeeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
 ];
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    CreateEmployeeComponent,
   ],
   imports: [
     BrowserModule,

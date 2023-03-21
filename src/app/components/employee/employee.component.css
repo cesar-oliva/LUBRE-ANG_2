@@ -1,5 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
+body{
+    font-size: 10px;
+}
+
+
 .title{
     background-color: var(--bg-color-blue);
     padding-top: 10px;
